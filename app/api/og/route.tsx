@@ -4,10 +4,18 @@ export const runtime = "edge";
 
 export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+
+    const hasTitle = searchParams.has("title");
+    const title = hasTitle
+      ? searchParams.get("title")?.slice(0, 100)
+      : "Default Title";
     return new ImageResponse(
       (
-        <div tw="flex items-center justify-center w-full h-full bg-blue-100">
-          <h1>Henry's Og:Image</h1>
+        <div tw="flex w-full h-full items-center justify-center">
+          <div tw="flex">
+            <h1>{title}</h1>
+          </div>
         </div>
       )
     );

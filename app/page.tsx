@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <head>
-        <title>Home-Page</title>
+      <Head>
+      <title>Home-Page</title>
         <meta
           property="og:image"
           content="https://og-vercel-ashy.vercel.app/api/og"
         />
-      </head>
+      </Head>
       <h1>Home-Page</h1>
     </main>
   );

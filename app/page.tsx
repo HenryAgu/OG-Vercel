@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <main>
+    <div>
       <Head>
       <title>Home-Page</title>
         <meta
           property="og:image"
-          content="https://og-vercel-ashy.vercel.app/api/og"
+          content="https://og-vercel-ashy.vercel.app/api/og?title=Home+Page"
         />
       </Head>
       <h1>Home-Page</h1>
-    </main>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export async function GET(request: Request) {
-  const imageData = await fetch(new URL('../../public/image.jpg', import.meta.url)).then(
+  const imageData = await fetch(new URL('../../public/images.jpeg', import.meta.url)).then(
     (res) => res.arrayBuffer(),
   );
   try {
@@ -18,10 +18,11 @@ export async function GET(request: Request) {
         
         <div tw="flex w-full h-full items-center justify-center">
           <div tw="flex items-center justify-center h-full w-1/2 bg-blue-200">
-            <h1>Welcome To</h1>
+            <h1>{title}</h1>
           </div>
-          <div tw="flex items-center justify-center bg-white-300 h-full w-1/2">
-          <h1>{title}</h1>
+          <div tw="flex h-full w-1/2">
+            {/* @ts-ignore */}
+            <img src={imageData} alt="imageData" tw="h-full w-full"/>
           </div>
         </div>
       )
